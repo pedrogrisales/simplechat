@@ -26,14 +26,13 @@ app.get("/", function (req, res) {
 io.sockets.on('connection', function (socket) {
     
     console.log('Nuevo cliente conectado');        
-    socket.emit('info', {msg:'Bienvenido.'});
+    socket.emit('connected', {msg:'Bienvenido.'});
     
-	socket.on('message', function(data){		
-		io.emit('message', {msg:data.msg});
+	socket.on('message', function(data){			
+		io.emit('message', data);
 	});
 	
 });
-
 
 
 console.log('Express server listening on port ' + app.get('port'));
