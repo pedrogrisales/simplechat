@@ -1,0 +1,34 @@
+
+html
+  head
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    title!= title
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='style.css')
+
+
+
+
+
+  body
+
+    div.container
+      div.page-header
+          h1!= title
+
+      div.row
+        div.col-lg-12
+          div.well.well-sm.box-message.text-right
+            textarea(placeholder='escriba el mensaje')#message.form-control
+            a.btn.btn-primary.send Enviar
+
+      div.row
+        div.col-lg-12
+          ul#list-messages
+            
+
+
+    script(type='text/javascript', src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+    script(type='text/javascript', src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(type='text/javascript', src='/socket.io/socket.io.js')
+    script(type='text/javascript', src='client.js')
